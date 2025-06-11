@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My RPG-Idle Game</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>My RPG-Idle</h1>
+  </header>
+
+  <main>
+    <!-- Player Info -->
+    <section id="player-info">
+      <h2 id="player-name">Hero</h2>
+      <p>Level: <span id="player-level">1</span></p>
+      <p>XP: <span id="player-xp">0</span> / <span id="player-xp-next">100</span></p>
+      <p>HP: <span id="player-hp">100</span> / <span id="player-maxhp">100</span></p>
+    </section>
+
+    <!-- Skills List -->
+    <section id="skills">
+      <h3>Skills</h3>
+      <ul id="skill-list"></ul>
+    </section>
+
+    <!-- Quests -->
+    <aside id="quest-log">
+      <h3>Quests</h3>
+      <ul id="quest-list"></ul>
+    </aside>
+
+    <!-- Combat Panel -->
+    <section id="combat">
+      <h3>Combat</h3>
+      <div id="combat-view">
+        <label for="offense-select">Choose Skill:</label>
+        <select id="offense-select">
+          <option value="Attack">Attack</option>
+          <option value="Strength">Strength</option>
+          <option value="Magic">Magic</option>
+        </select>
+        <p id="combat-status">No enemy present</p>
+        <button id="fight-btn">Fight Goblin</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="notifications"></div>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
