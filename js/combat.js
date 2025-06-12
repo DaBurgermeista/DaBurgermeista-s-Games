@@ -11,7 +11,7 @@ import { getSkillByName } from './skills.js';
 export class Enemy {
   constructor({
     id,
-    name = 'Goblin',
+    name = 'Street Punk',
     level = 1,
     stats = { attack: 0, defense: 0 },
     maxHp = 5,
@@ -43,9 +43,9 @@ export class Enemy {
   }
 }
 
-// Enemy templates (weakened Goblin)
+// Enemy templates (weakened Street Punk)
 export const EnemyTemplates = [
-  { id: 1, name: 'Goblin', level: 1, stats: { attack: 0, defense: 0 }, maxHp: 5, goldReward: 5 }
+  { id: 1, name: 'Street Punk', level: 1, stats: { attack: 0, defense: 0 }, maxHp: 5, goldReward: 5 }
 ];
 
 /**

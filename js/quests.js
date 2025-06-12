@@ -63,7 +63,7 @@ export class Quest {
 export const Quests = [
   new Quest({
     id: 1,
-    name: 'Train Attack to 5',
+    name: 'Upgrade Attack Protocol to 5',
     description: 'Reach Attack level 5.',
     requirements: { skill: { name: 'Attack', level: 5 } },
     rewards: { xp: 200, gold: 50 }
