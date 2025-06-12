@@ -54,8 +54,10 @@ export class Player {
   }
 
   takeDamage(amount) {
-    this.health = Math.max(this.health - amount, 0);
+    const damage = Math.max(amount - (this.stats.defense || 0), 0);
+    this.health = Math.max(this.health - damage, 0);
     if (this.health === 0) this.onDeath();
+    return damage;
   }
 
   heal(amount) {
