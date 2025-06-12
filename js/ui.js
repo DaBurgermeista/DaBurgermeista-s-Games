@@ -23,6 +23,7 @@ export const UI = {
     this.xpNextEl = document.getElementById('player-xp-next');
     this.hpEl = document.getElementById('player-hp');
     this.maxHpEl = document.getElementById('player-maxhp');
+    this.goldEl = document.getElementById('player-gold');
     this.skillListEl = document.getElementById('skill-list');
     this.questListEl = document.getElementById('quest-list');
     this.combatViewEl = document.getElementById('combat-view');
@@ -33,15 +34,18 @@ export const UI = {
   },
 
   renderPlayer() {
+    if (!this.nameEl) return;
     this.nameEl.textContent = player.name;
     this.levelEl.textContent = player.level;
     this.xpEl.textContent = Math.floor(player.xp);
     this.xpNextEl.textContent = player.xpForNext();
     this.hpEl.textContent = player.health;
     this.maxHpEl.textContent = player.maxHealth;
+    if (this.goldEl) this.goldEl.textContent = player.gold || 0;
   },
 
   renderSkills() {
+    if (!this.skillListEl) return;
     this.skillListEl.innerHTML = '';
     Skills.forEach(skill => {
       const li = document.createElement('li');
@@ -50,13 +54,30 @@ export const UI = {
         <div class="info">
           <span class="name">${skill.name} (Lv ${skill.level})</span>
           <div class="bar"><div class="fill" style="width: ${this.fillPercent(skill)}%;"></div></div>
+          <span class="xp">${Math.floor(skill.xp)} / ${skill.xpForNext()}</span>
         </div>
       `;
+
+      const btn = document.createElement('button');
+      btn.className = 'train-btn';
+      btn.textContent = skill.isTraining ? 'Stop' : 'Train';
+      if (skill.isTraining) btn.classList.add('active');
+      btn.addEventListener('click', () => {
+        if (skill.isTraining) {
+          skill.stopTraining();
+        } else {
+          skill.startTraining();
+        }
+        this.renderSkills();
+      });
+
+      li.append(btn);
       this.skillListEl.append(li);
     });
   },
 
   renderQuests() {
+    if (!this.questListEl) return;
     this.questListEl.innerHTML = '';
     Quests.forEach(q => {
       const li = document.createElement('li');
@@ -114,6 +135,8 @@ export const UI = {
   },
 
   showNotification(msg) {
+    if (!this.notificationEl) return;
+
     const el = document.createElement('div');
     el.textContent = msg;
     this.notificationEl.append(el);

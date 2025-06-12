@@ -8,6 +8,7 @@ export class Player {
     name = 'Hero',
     level = 1,
     xp = 0,
+    gold = 0,
     stats = { strength: 1, dexterity: 1, intelligence: 1 },
     health = 100,
     maxHealth = 100,
@@ -17,6 +18,7 @@ export class Player {
     this.name = name;
     this.level = level;
     this.xp = xp;
+    this.gold = gold;
     this.stats = stats;
     this.health = health;
     this.maxHealth = maxHealth;
@@ -101,6 +103,7 @@ export class Player {
       name: this.name,
       level: this.level,
       xp: this.xp,
+      gold: this.gold,
       stats: this.stats,
       health: this.health,
       maxHealth: this.maxHealth,
@@ -115,4 +118,4 @@ export class Player {
 }
 
 // Singleton player instance
-export const player = new Player({ name: 'Hero' });
+export const player = new Player({ name: 'Hero', gold: 0 });

@@ -86,6 +86,13 @@ main {
   margin-top: 5px;
 }
 
+.skill-item .xp {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: #555;
+}
+
 .skill-item .fill {
   height: 100%;
   width: 0%;
