@@ -1,5 +1,12 @@
 /* style.css */
 
+:root {
+  --bg-color: #0d0d0d;
+  --text-color: #e0e0e0;
+  --card-bg: #1f1f1f;
+  --accent: #00e0ff;
+}
+
 /* Reset and Box Sizing */
 * {
   margin: 0;
@@ -9,9 +16,9 @@
 
 /* Base Styles */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
+  font-family: 'Share Tech Mono', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   line-height: 1.6;
   padding: 20px;
 }
@@ -20,6 +27,7 @@ header h1 {
   text-align: center;
   margin-bottom: 20px;
   font-size: 2rem;
+  color: var(--accent);
 }
 
 /* Layout */
@@ -36,10 +44,10 @@ main {
 #skills,
 #quest-log,
 #combat {
-  background-color: #fff;
+  background-color: var(--card-bg);
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 224, 255, 0.2);
 }
 
 #player-info h2 {
@@ -80,7 +88,7 @@ main {
   position: relative;
   width: 100%;
   height: 10px;
-  background-color: #ddd;
+  background-color: #333;
   border-radius: 5px;
   overflow: hidden;
   margin-top: 5px;
@@ -90,13 +98,13 @@ main {
   display: block;
   margin-top: 4px;
   font-size: 0.8rem;
-  color: #555;
+  color: #aaa;
 }
 
 .skill-item .fill {
   height: 100%;
   width: 0%;
-  background-color: #76c7c0;
+  background-color: var(--accent);
   transition: width 0.3s ease;
 }
 
@@ -104,14 +112,14 @@ main {
   margin-left: 15px;
   padding: 5px 10px;
   border: none;
-  background-color: #76c7c0;
+  background-color: var(--accent);
   color: #fff;
   border-radius: 4px;
   cursor: pointer;
 }
 
 .skill-item button.train-btn.active {
-  background-color: #4aada9;
+  background-color: #009eb8;
 }
 
 /* Quests */
@@ -127,21 +135,21 @@ main {
 .quest-item {
   margin-bottom: 15px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #444;
 }
 
 .quest-item.available button {
   margin-left: 10px;
   padding: 5px 10px;
   border: none;
-  background-color: #76c7c0;
+  background-color: var(--accent);
   color: #fff;
   border-radius: 4px;
   cursor: pointer;
 }
 
 .quest-item.available button:hover {
-  background-color: #4aada9;
+  background-color: #009eb8;
 }
 
 .quest-item.inProgress span,
@@ -173,14 +181,14 @@ main {
 #combat-view button {
   padding: 8px 12px;
   border: none;
-  background-color: #ee6a50;
+  background-color: var(--accent);
   color: #fff;
   border-radius: 4px;
   cursor: pointer;
 }
 
 #combat-view button:hover {
-  background-color: #d9553c;
+  background-color: #009eb8;
 }
 
 /* Notifications */

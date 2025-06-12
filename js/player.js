@@ -5,7 +5,7 @@ import { UI } from './ui.js';
 
 export class Player {
   constructor({
-    name = 'Hero',
+    name = 'Runner',
     level = 1,
     xp = 0,
     gold = 0,
@@ -118,4 +118,4 @@ export class Player {
 }
 
 // Singleton player instance
-export const player = new Player({ name: 'Hero', gold: 0 });
+export const player = new Player({ name: 'Runner', gold: 0 });

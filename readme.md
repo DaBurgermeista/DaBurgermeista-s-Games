@@ -1,6 +1,6 @@
-# My RPG-Idle Game
+# Cyberpunk Idle Game
 
-This project is a browser-based idle role-playing game. You control a single hero who trains skills, completes quests and fights basic enemies. Progress happens automatically over time and you can continue later thanks to local storage save data.
+This project is a browser-based idle role-playing game set in a neon-soaked future. You control a lone runner who trains skills, completes jobs and fights street punks. Progress happens automatically over time and you can continue later thanks to local storage save data.
 
 ## Running the game
 
@@ -12,7 +12,7 @@ Game progress is stored using your browser's Local Storage feature. Data is load
 
 ## Basic controls
 
-- View your hero's stats at the top of the page.
+- View your runner's stats at the top of the page.
 - Skills train passively every second. They will also gain experience when used in combat.
 - The "Fight" button pits you against a simple enemy; choose which skill to train from the drop down.
 - Available quests appear in the side panel. Start them once you meet their skill requirements.
