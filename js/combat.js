@@ -108,4 +108,6 @@ export function fightEnemy(enemy, offenseSkillName = 'Attack') {
   UI.renderPlayer();
   UI.renderSkills();
   UI.renderQuests();
+
+  return { dealt: totalDealt, taken: totalTaken };
 }
